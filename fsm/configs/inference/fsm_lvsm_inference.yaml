@@ -1,0 +1,84 @@
+inference: true
+
+model:
+
+  class_name: fsm.model.model_4dlvsm.FSM4DLVSM
+  patch_size: 8
+  dim: 768
+  num_layers: 24
+  max_frames: 256
+
+  plucker_repr:
+    - ray_o
+    - ray_d
+    - o_cross_d
+    # - nearest_pts
+
+  image_tokenizer:
+
+    image_size: 256
+
+  block_config:
+
+    - type: fsm.model.model_blocks.SelfAttention
+      length_dim: l
+      params:
+        head_dim: 64
+        use_qk_norm: true
+
+    - type: fsm.model.model_lacet.FastWeightGluMLPMultihead
+      length_dim: vl
+      params:
+        head_dim: 768
+        inter_multi: 2
+        base_lr: 0.01
+        muon_update_steps: 5
+        chunk_size: 8192
+
+    - type: fsm.model.model_blocks.MLP
+      length_dim: vl
+      params:
+        inter_multi: 4
+
+training:
+
+  # general config
+  use_hop: true               # running on H100 / ... 
+  use_amp: false              # running on A100 / ... automatic mixed precision
+  use_tf32: true
+  amp_dtype: "bf16"
+  torch_compile: false
+  actckpt: true
+
+  # data loader
+  pin_memory: false
+  bs_per_gpu: 1
+  num_workers: 8
+  base_world_size: 8
+  num_threads: 64
+  prefetch_factor: 2
+  
+  # view sampling
+  num_all_views: 40
+  num_input_views: 32
+  num_target_views: 8
+
+  # ewc parameters
+  ewc_enable: true                    # enable Elastic Weight Consolidation (EWC)
+  ewc_lambda_prox: 0.5                # proximal strength applied inside LaCT
+  ewc_alpha: 0.5                      # EMA factor for Fisher information in-stream
+  ewc_mode: "si"                      # Fisher proxy mode: "sq" = Δw², "abs" = |Δw|
+  ewc_anchor_policy: "streaming-ema"  # anchor update strategy: "global", "streaming" + "(-online)" "(-ema)"
+  ewc_anchor_beta: 0.5                # EMA factor for anchor update if using ema-streaming policy5  
+  ewc_loss_weight: 0.0                # training-time EWC loss weight (0.0 = off)                # save pth after every fwdbwd_pass steps
+
+dataset:
+
+  window_size: 256
+  sort_by_time: true
+
+  scene_pose_normalize: true
+  dataset_ratios:
+    stereo4d_test: 1
+    # nvidia_test: 1
+    # dl3dv_test: 1

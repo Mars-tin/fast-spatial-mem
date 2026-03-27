@@ -1,0 +1,22 @@
+{
+  "example": "static/datasets/example/example.json",
+  "stereo4d": "ADD_YOUR_PATH_HERE",
+  "multicam": "ADD_YOUR_PATH_HERE",
+  "egoexo4d": "ADD_YOUR_PATH_HERE",
+  "dynamic_replica": "ADD_YOUR_PATH_HERE",
+  "waymo": "ADD_YOUR_PATH_HERE",
+  "spring": "ADD_YOUR_PATH_HERE",
+  "point_odyssey": "ADD_YOUR_PATH_HERE",
+  "re10k": "ADD_YOUR_PATH_HERE",
+  "dl3dv": "ADD_YOUR_PATH_HERE",
+  "co3d": "ADD_YOUR_PATH_HERE",
+  "objaverse": "ADD_YOUR_PATH_HERE",
+  "objaverse_xl": "ADD_YOUR_PATH_HERE",
+  "dl3dv_test": "ADD_YOUR_PATH_HERE",
+  "re10k_test": "ADD_YOUR_PATH_HERE",
+  "stereo4d_test": "ADD_YOUR_PATH_HERE",
+  "dycheck_test": "ADD_YOUR_PATH_HERE",
+  "nvidia_test":  "ADD_YOUR_PATH_HERE",
+  "neural3dv_test": "ADD_YOUR_PATH_HERE",
+  "objaverse_test": "ADD_YOUR_PATH_HERE"
+}
