@@ -1,6 +1,6 @@
 <h1 align="center">FSM: Fast Spatial Memory</h1>
 
-This repository is a PyTorch/GPU implementation of [**Fast Spatial Memory with Elastic Test-Time Training**](https://mars-tin.github.io/blogs/posts/elastic_ttt.html), as well as a *self-reimplemented (non-official!)* version of [**4D-LRM**](https://4dlrm.github.io/).
+This repository is a PyTorch/GPU implementation of [**Fast Spatial Memory with Elastic Test-Time Training**](https://fast-spatial-memory.github.io/), as well as a *self-reimplemented (non-official!)* version of [**4D-LRM**](https://4dlrm.github.io/).
 
 Please note, **this repository is not distributed under a single uniform license**. The license terms applicable to a given file or implementation path depend on that file’s provenance. Users must comply with the license terms applicable to each file, directory, or implementation path, as described in `LICENSE.md` and in the corresponding license files and file headers.
 
@@ -33,7 +33,7 @@ Pretrained weights are available on [Hugging Face](https://huggingface.co/marsti
 - [x] Release the `res256` 4D-LVSM models
 - [x] Release the `res256` 4D-LRM models
 - [x] Release the `res128` base models
-- [ ] Add detailed model cards
+- [x] Add detailed model cards
 
 ```python
 import os
@@ -127,17 +127,16 @@ bash scripts/launch_fsm_lrm_eval.sh
 ### Fast Spatial Memory with Elastic Test-Time Training
 Ziqiao Ma*, Xueyang Yu*, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan 
 
-[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=b31b1b)](https://arxiv.org/)
-[![Project Page](https://img.shields.io/badge/Project-Website-5B7493?logo=googlechrome&logoColor=5B7493)](https://fast-spatial-mem.github.io/)
+[![Paper](https://img.shields.io/badge/arXiv-Paper-b31b1b?logo=arxiv&logoColor=b31b1b)](https://arxiv.org/abs/2604.07350)
+[![Project Page](https://img.shields.io/badge/Project-Website-5B7493?logo=googlechrome&logoColor=5B7493)](https://fast-spatial-memory.github.io/)
 [![Hugging Model Card](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-Green)](https://huggingface.co/marstin/fast-spatial-mem)
 
 ```bibtex
-@article{ma2025fast,
+@article{ma2026fast,
   title={Fast Spatial Memory with Elastic Test-Time Training},
   author={Ma, Ziqiao and Yu, Xueyang and Zhen, Haoyu and Yang, Yuncong and Chai, Joyce and Gan, Chuang},
-  journal={Blog Post},
-  url={https://mars-tin.github.io/blogs/posts/elastic_ttt.html},
-  year={2025}
+  journal={arXiv preprint arXiv:2604.07350},
+  year={2026}
 }
 ```
 
