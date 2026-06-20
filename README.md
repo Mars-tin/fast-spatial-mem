@@ -1,6 +1,6 @@
 <h1 align="center">FSM: Fast Spatial Memory</h1>
 
-This repository is a PyTorch/GPU implementation of [**Fast Spatial Memory with Elastic Test-Time Training**](https://fast-spatial-memory.github.io/), as well as a *self-reimplemented (non-official!)* version of [**4D-LRM**](https://4dlrm.github.io/).
+This repository is a PyTorch/GPU implementation of [**Fast Spatial Memory with Elastic Test-Time Training**](https://fast-spatial-memory.github.io/) (ECCV 2026), as well as a *self-reimplemented (non-official!)* version of [**4D-LRM**](https://4dlrm.github.io/) (NeurIPS 2025).
 
 Please note, **this repository is not distributed under a single uniform license**. The license terms applicable to a given file or implementation path depend on that file’s provenance. Users must comply with the license terms applicable to each file, directory, or implementation path, as described in `LICENSE.md` and in the corresponding license files and file headers.
 
@@ -132,10 +132,10 @@ Ziqiao Ma*, Xueyang Yu*, Haoyu Zhen, Yuncong Yang, Joyce Chai, Chuang Gan
 [![Hugging Model Card](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Model-Green)](https://huggingface.co/marstin/fast-spatial-mem)
 
 ```bibtex
-@article{ma2026fast,
+@inproceedings{ma2026fast,
   title={Fast Spatial Memory with Elastic Test-Time Training},
   author={Ma, Ziqiao and Yu, Xueyang and Zhen, Haoyu and Yang, Yuncong and Chai, Joyce and Gan, Chuang},
-  journal={arXiv preprint arXiv:2604.07350},
+  booktitle={European Conference on Computer Vision}
   year={2026}
 }
 ```
